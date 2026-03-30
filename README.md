@@ -8,7 +8,7 @@
 
 Este projeto e um assistente interno que responde perguntas em linguagem natural direto pelo Slack.
 
-Ele pesquisa nos documentos internos da empresa para encontrar o conteudo mais relevante e usa um modelo de inteligencia artificial para gerar uma resposta clara e contextualizada — sem que o usuario precise buscar arquivos manualmente ou ler documentacoes longas.
+Ele pesquisa nos documentos internos da empresa para encontrar o conteudo mais relevante e usa um modelo de inteligencia artificial para gerar uma resposta clara e contextualizada, sem que o usuario precise buscar arquivos manualmente ou ler documentacoes longas.
 
 ---
 
