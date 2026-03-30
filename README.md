@@ -27,7 +27,7 @@ Ele pesquisa nos documentos internos da empresa para encontrar o conteudo mais r
 |---|---|
 | Slack API | Interface onde o usuario faz perguntas e recebe respostas |
 | AWS S3 | Armazenamento dos documentos internos |
-| AWS OpenSearch | Banco de dados vetorial — permite busca semantica nos documentos |
+| AWS OpenSearch | Banco de dados vetorial, permite busca semantica nos documentos |
 | AWS Bedrock | Modelo de IA responsavel por gerar as respostas |
 | AWS EC2 | Servidor onde a aplicacao fica hospedada |
 

@@ -23,7 +23,7 @@ It searches through internal documents to find relevant content and uses an AI m
 |---|---|
 | Slack API | Interface where the user sends questions and receives answers |
 | AWS S3 | Storage for internal documents |
-| AWS OpenSearch | Vector database — enables semantic search across documents |
+| AWS OpenSearch | Vector database, enables semantic search across documents |
 | AWS Bedrock | AI model used to generate responses |
 | AWS EC2 | Server where the application runs |
 
