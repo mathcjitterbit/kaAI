@@ -1,63 +1,67 @@
 # Knowledge Agent
 
-## What is this?
-
-This project is an internal assistant that answers questions in natural language via Slack.
-
-It searches through internal documents to find relevant content and uses an AI model to generate a clear, contextualized response — without the user needing to manually search for files or read long documentation.
+> Versao em ingles: [README-en.md](README-en.md)
 
 ---
 
-## How it works
+## O que e isso?
 
-1. The user sends a question in Slack
-2. The system searches the document base for the most relevant content
-3. The AI model reads that content and generates a response
-4. The response is delivered back in Slack
+Este projeto e um assistente interno que responde perguntas em linguagem natural direto pelo Slack.
+
+Ele pesquisa nos documentos internos da empresa para encontrar o conteudo mais relevante e usa um modelo de inteligencia artificial para gerar uma resposta clara e contextualizada — sem que o usuario precise buscar arquivos manualmente ou ler documentacoes longas.
 
 ---
 
-## Technology used
+## Como funciona
 
-| Component | Purpose |
+1. O usuario envia uma pergunta no Slack
+2. O sistema busca nos documentos internos os trechos mais relevantes
+3. O modelo de IA le esses trechos e gera uma resposta
+4. A resposta e devolvida para o usuario no proprio Slack
+
+---
+
+## Tecnologias utilizadas
+
+| Componente | Para que serve |
 |---|---|
-| Slack API | Interface where the user sends questions and receives answers |
-| AWS S3 | Storage for internal documents |
-| AWS OpenSearch | Vector database — enables semantic search across documents |
-| AWS Bedrock | AI model used to generate responses |
-| AWS EC2 | Server where the application runs |
+| Slack API | Interface onde o usuario faz perguntas e recebe respostas |
+| AWS S3 | Armazenamento dos documentos internos |
+| AWS OpenSearch | Banco de dados vetorial — permite busca semantica nos documentos |
+| AWS Bedrock | Modelo de IA responsavel por gerar as respostas |
+| AWS EC2 | Servidor onde a aplicacao fica hospedada |
 
 ---
 
-## Project structure
+## Estrutura do projeto
 
 ```
 /app
-  /api          - Entry points (routes and endpoints)
-  /services     - Business logic
-  /retrieval    - Document search
-  /embedding    - Text vectorization
-  /llm          - Communication with the AI model
-/ingestion      - Pipeline for importing and processing documents
-/models         - Data structures
-/utils          - Shared utilities
+  /api          - Pontos de entrada (rotas e endpoints)
+  /services     - Logica de negocio
+  /retrieval    - Busca nos documentos
+  /embedding    - Vetorizacao dos textos
+  /llm          - Comunicacao com o modelo de IA
+/ingestion      - Pipeline de importacao e processamento de documentos
+/models         - Estruturas de dados
+/utils          - Utilitarios compartilhados
 ```
 
 ---
 
-## Python setup
+## Configuracao em Python
 
-> The steps below are specific to the Python implementation.
+> Os passos abaixo sao especificos para a implementacao em Python.
 
-### 1. Install dependencies
+### 1. Instalar as dependencias
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Configure environment variables
+### 2. Configurar as variaveis de ambiente
 
-Create a `.env` file in the project root with the following variables:
+Crie um arquivo `.env` na raiz do projeto com as seguintes variaveis:
 
 ```
 AWS_ACCESS_KEY_ID=
@@ -68,15 +72,15 @@ S3_BUCKET_NAME=
 BEDROCK_MODEL_ID=
 ```
 
-### 3. Run the API
+### 3. Iniciar a API
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-### 4. Run the document ingestion pipeline
+### 4. Executar o pipeline de ingestao de documentos
 
-This step processes and indexes the documents that the assistant will use to answer questions.
+Esta etapa processa e indexa os documentos que o assistente usara para responder as perguntas.
 
 ```bash
 python ingestion/run_ingestion.py
@@ -84,8 +88,8 @@ python ingestion/run_ingestion.py
 
 ---
 
-## Planned improvements
+## Melhorias previstas
 
-- Feedback mechanism to rate answer quality
-- Improved document ranking in search results
-- Richer Slack interface with buttons and interactive components
+- Mecanismo de feedback para avaliar a qualidade das respostas
+- Melhoria no ranqueamento dos documentos na busca
+- Interface mais rica no Slack com botoes e componentes interativos
