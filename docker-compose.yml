@@ -16,5 +16,19 @@ services:
     volumes:
       - opensearch-data:/usr/share/opensearch/data
 
+  api:
+    build: .
+    container_name: kaai-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - OPENSEARCH_HOST=opensearch
+      - OPENSEARCH_PORT=9200
+    depends_on:
+      - opensearch
+
 volumes:
   opensearch-data:
+

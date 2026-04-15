@@ -1,7 +1,17 @@
+import os
 from opensearchpy import OpenSearch
+from dotenv import load_dotenv
+
+load_dotenv()
+
+OPENSEARCH_HOST = os.getenv("OPENSEARCH_HOST", "localhost")
+OPENSEARCH_PORT = int(os.getenv("OPENSEARCH_PORT", "9200"))
+OPENSEARCH_USE_SSL = os.getenv("OPENSEARCH_USE_SSL", "false").lower() == "true"
 
 client = OpenSearch(
-    hosts=[{"host": "localhost", "port": 9200}],
+    hosts=[{"host": OPENSEARCH_HOST, "port": OPENSEARCH_PORT}],
+    use_ssl=OPENSEARCH_USE_SSL,
+    verify_certs=OPENSEARCH_USE_SSL,
 )
 
 INDEX_NAME = "knowledge"

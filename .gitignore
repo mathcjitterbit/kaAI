@@ -1,3 +1,30 @@
+# Secrets — NUNCA commitar
 .env
+
+# Documentos internos — nao expor em repo publico
+docs/*.pdf
+docs/*.docx
+docs/*.xlsx
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# Ambientes virtuais
+venv/
+.venv/
+env/
+
+# IDEs
+.vscode/
+.idea/
+
+# Misc
+*.log
+.DS_Store
+
+# Scripts utilitarios locais (nao fazem parte do deploy)
 list_models.py
 test_search.py
